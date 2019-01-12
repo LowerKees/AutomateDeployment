@@ -1,0 +1,63 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "accounts_devadlahivemind_defaultDataLakeStoreAccount": {
+            "defaultValue": null,
+            "type": "SecureString"
+        },
+        "accounts_devadlahivemind_dataLakeStoreAccounts": {
+            "defaultValue": null,
+            "type": "Array"
+        },
+        "accounts_devadlshivemind_name": {
+            "defaultValue": "devadlshivemind",
+            "type": "String"
+        },
+        "accounts_devadlahivemind_name": {
+            "defaultValue": "devadlahivemind",
+            "type": "String"
+        },
+        "dataLakeStoreAccounts_devadlshivemind_name": {
+            "defaultValue": "devadlshivemind",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/017aaf80-8eff-4760-a250-8f1928ecaddf/resourceGroups/rgdevdatalake/providers/Microsoft.DataLakeAnalytics/accounts/devadlahivemind'.",
+            "type": "Microsoft.DataLakeAnalytics/accounts",
+            "name": "[parameters('accounts_devadlahivemind_name')]",
+            "apiVersion": "2016-11-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {
+                "defaultDataLakeStoreAccount": "[parameters('accounts_devadlahivemind_defaultDataLakeStoreAccount')]",
+                "dataLakeStoreAccounts": "[parameters('accounts_devadlahivemind_dataLakeStoreAccounts')]"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/017aaf80-8eff-4760-a250-8f1928ecaddf/resourceGroups/rgdevdatalake/providers/Microsoft.DataLakeStore/accounts/devadlshivemind'.",
+            "type": "Microsoft.DataLakeStore/accounts",
+            "name": "[parameters('accounts_devadlshivemind_name')]",
+            "apiVersion": "2016-11-01",
+            "location": "westeurope",
+            "scale": null,
+            "properties": {},
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/017aaf80-8eff-4760-a250-8f1928ecaddf/resourceGroups/rgdevdatalake/providers/Microsoft.DataLakeAnalytics/accounts/devadlahivemind/dataLakeStoreAccounts/devadlshivemind'.",
+            "type": "Microsoft.DataLakeAnalytics/accounts/dataLakeStoreAccounts",
+            "name": "[concat(parameters('accounts_devadlahivemind_name'), '/', parameters('dataLakeStoreAccounts_devadlshivemind_name'))]",
+            "apiVersion": "2016-11-01",
+            "scale": null,
+            "properties": {},
+            "dependsOn": [
+                "[resourceId('Microsoft.DataLakeAnalytics/accounts', parameters('accounts_devadlahivemind_name'))]"
+            ]
+        }
+    ]
+}

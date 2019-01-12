@@ -1,8 +1,8 @@
 param(
- [Parameter(Mandatory=$True)][string]$subscriptionId,
- [Parameter(Mandatory=$True)][string]$resourceGroupName,
- [string] $templateFilePath = "template.json",
- [string]$parametersFilePath = "parameters.json"
+ [string]$subscriptionId = "017aaf80-8eff-4760-a250-8f1928ecaddf",
+ [string]$resourceGroupName = "rgdevdatalake",
+ [string] $templateFilePath = "$($PSScriptRoot)/datalake/template.json",
+ [string]$parametersFilePath = "$($PSScriptRoot)/datalake/parameters.json"
 )
 
 $ErrorActionPreference = "Stop";

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "accounts_devadlahivemind_defaultDataLakeStoreAccount": {
+            "value": null
+        },
+        "accounts_devadlahivemind_dataLakeStoreAccounts": {
+            "value": null
+        },
+        "accounts_devadlshivemind_name": {
+            "value": null
+        },
+        "accounts_devadlahivemind_name": {
+            "value": null
+        },
+        "dataLakeStoreAccounts_devadlshivemind_name": {
+            "value": null
+        }
+    }
+}
